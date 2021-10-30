@@ -20,7 +20,8 @@ if (isset($_POST["submitform"])) {
             }
 
             .imgpdf {
-                width: 100vw;
+                width: 2480px;
+                height:3508px;
             }
 
             .loading {
