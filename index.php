@@ -21,7 +21,6 @@ if (isset($_POST["submitform"])) {
 
             .imgpdf {
                 width: 100vw;
-                height: 100vh;
             }
 
             .loading {
