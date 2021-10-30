@@ -35,7 +35,7 @@ if (isset($_POST["submitform"])) {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                z-index: 5;
+                z-index: 1000;
             }
 
             .loading>img {
