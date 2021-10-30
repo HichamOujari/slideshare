@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST["submitform"])) {
     $html = file_get_contents($_POST['siteweb']);
-    echo $html;
+    
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -34,7 +34,8 @@ if (isset($_POST["submitform"])) {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center
+                justify-content: center;
+                z-index: 5;
             }
 
             .loading>img {
@@ -46,9 +47,8 @@ if (isset($_POST["submitform"])) {
 
     <body>
 
-        <div id="loadingshow" class="loading">
-            <img src="./assets/loading.gif" />
-        </div>
+        <div id="loadingshow" class="loading"><img src="./assets/loading.gif" /></div>
+        <?php echo $html; ?>
         <script>
             var afterPrint = function() {
                 document.location.href=document.location.href;
@@ -72,13 +72,14 @@ if (isset($_POST["submitform"])) {
                     console.log(document.getElementsByClassName("notranslate")[1].href);
                 } else {
                     path = path.src;
-                    document.body.innerHTML = "";
+                    document.body.innerHTML = '<div id="loadingshow" class="loading"><img src="./assets/loading.gif" /></div>';
                     for (var i = 1; i <= n; i++) {
                         var src = path.split("-1-")[0] + "-" + i + "-" + path.split("-1-")[1]
                         var tag = document.createElement('img');
                         tag.src = src;
                         document.body.appendChild(tag);
                     }
+                    document.getElementById("loadingshow").style.display = "none";
                     var rsp = window.print()
 
 
