@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 40%;
+    min-width: 400px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    min-width: 600px;
+    height: 40px;
+    flex-direction: column;
+}
+
+form>input[type=submit] {
+    font-size: 19px;
+    color: white;
+    border: 2px solid #366CBD;
+    background-color: #366CBD;
+    padding-left: 50px;
+    padding-right: 50px;
+    cursor: pointer;
+}
+
+form>input[type=text] {
+    width: Calc(100% - 210px);
+    outline: none;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
